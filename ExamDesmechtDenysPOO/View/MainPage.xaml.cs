@@ -1,25 +1,23 @@
-﻿namespace ExamDesmechtDenysPOO
+﻿using ExamDesmechtDenysPOO.ViewModel;
+
+namespace ExamDesmechtDenysPOO
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
-        public MainPage()
+        public MainPage(MainPageViewModel mainPageVM)
         {
+            mainPageViewModel = mainPageVM;
+            BindingContext = mainPageVM;
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+        private MainPageViewModel mainPageViewModel;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+
+
     }
+
+
 
 }
