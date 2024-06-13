@@ -4,11 +4,96 @@
              x:Class="ExamDesmechtDenysPOO.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            
-        </VerticalStackLayout>
+
+        <Grid Margin="0,20,0,20">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0" 
+                Padding="30,0"
+                Spacing="25">
+                <Label 
+                 Text="Selection de la référence  :"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Start"  
+                />
+                <Picker 
+                   ItemsSource="{Binding ElectrosToSell}" 
+                   ItemDisplayBinding ="{Binding BuilderReference}" 
+                   SelectedItem="{Binding ElectroUserSelection}"
+                   WidthRequest="250"
+                   HorizontalOptions="Start"  
+                 />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" 
+                Padding="30,0"
+                Spacing="25">
+                <Label 
+                  Text="Infos Electro sélectionné "
+                  FontAttributes="Bold"
+                />
+                <Label 
+                  Text="Reference : "
+                />
+                <Label 
+                   Text="{Binding ElectroUserSelection.BuilderReference}" 
+                />
+                <Label 
+                   Text="Prix (€) : "
+                />
+                <Label 
+                   Text="{Binding ElectroUserSelection.PriceVac}" 
+                />
+                <Label 
+                   Text="Puissance (W) : "
+                 />
+                <Label 
+                   Text="{Binding ElectroUserSelection.ElecPower}" 
+                />
+                <Label 
+                  Text="Classe d'énergie : "
+                 />
+                <Label 
+                   Text="{Binding ElectroUserSelection.EnergyClass}" 
+                />
+                <Button             
+                   Text="Commander cet électro" 
+                   Command= "{Binding OrderItemCommand}"
+                />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2" 
+                Padding="30,0"
+                Spacing="25">
+                <!--<Label 
+                  Text="Electro en commande : "
+                   FontAttributes="Bold"  
+                />
+                <Label 
+                  Text="Reference : "
+                />
+                <Label 
+                  Text="{Binding A CONFIGURER}" 
+                />
+                <Label 
+                  Text="Quantité : "
+                />
+                <Entry 
+                   Text="{Binding A CONFIGURER}" 
+                />
+                <Label 
+                     Text="Prix total (€) : "
+                />
+                <Label 
+                      Text="{Binding A CONFIGURER}" 
+                 />-->
+            </VerticalStackLayout>
+        </Grid>
+
     </ScrollView>
 
 </ContentPage>

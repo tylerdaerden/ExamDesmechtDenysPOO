@@ -22,7 +22,7 @@ namespace ExamDesmechtDenysPOO
 
 
             //Injection Singletons
-            builder.Services.AddSingleton<DataAccess>();
+            builder.Services.AddSingleton<DataAccessHardCoded>();
 
             //Injection Transient
             builder.Services.AddTransient<MainPage>();

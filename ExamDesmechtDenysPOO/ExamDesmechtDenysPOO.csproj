@@ -65,7 +65,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\" />
 	  <Folder Include="Configuration\" />
 	  <Folder Include="Utilities\DataAccess\" />
 	  <Folder Include="Utilities\Interfaces\" />
